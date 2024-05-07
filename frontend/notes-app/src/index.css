@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    font-family: "Poppins", "sans-serif";
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+}
+
+@layer components{
+  .input-box{
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+  }
+
+  .btn-primary{
+    @apply w-full text-sm bg-primary text-white p-2 rounded my-1 hover:bg-blue-600;
+  }
+
+  .icon-btn{
+    @apply text-xl text-slate-300 cursor-pointer hover:text-primary
+  }
+
+  .input-label{
+    @apply text-xs text-slate-400
+  }
+  
+  .shadow-inner-bottom {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.5s ease-out;
+  animation-delay: calc(var(--index) * 0.13s);
+}
+
+.image-transition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes dotFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.dot-animation {
+  animation: dotFade 1s infinite;
+}
+
+.fade-in-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in-out.active {
+  opacity: 1;
+}
+
+/* Hide the up and down arrow icons */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.3s ease-in-out;
+}
+
+/* Hide scrollbar buttons */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 15px; /* Adjust width as needed */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Change if needed */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a; /* Change color as needed */
+  border-radius: 7px; /* Rounded corners */
+}
